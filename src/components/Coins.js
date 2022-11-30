@@ -27,6 +27,7 @@ const Coins = () => {
         fetchAPI();
     } ,[]);
     
+    
     const searchHandler = event=>{
         setSearch(event.target.value);
     }
