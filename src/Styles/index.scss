@@ -1,0 +1,15 @@
+@import '_variables';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    font-family: $font-poppins;
+}
+a{
+    text-decoration: none;
+    color: $textColor;
+}
+body{
+    scroll-behavior: smooth;
+    // background: $bgcolor;
+}

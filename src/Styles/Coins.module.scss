@@ -1,0 +1,61 @@
+@import './variables';
+@import './mixin';
+.main{
+    width: 100%;
+    .section{
+        width: calc(100% - 20rem);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $whiteColor;
+        margin-top: 5rem;
+        min-height: 80vh;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        position: relative;
+        .input_container{
+            position: absolute;
+            top: .5rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            input{
+                margin: .5rem 0;
+                padding: 5px 15px;
+                border-radius: 10px;
+            }
+        }
+        .coin_container{
+            margin: 4rem;
+            width: 100%;
+        }
+        .spinner{
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
+
+@include media (M) {
+    .main{
+       .section{
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        margin-top: 2rem;
+        } 
+    }
+}
+@include media (L) {
+    .main{
+       .section{
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        margin-top: 2rem;
+        } 
+    }
+}
+

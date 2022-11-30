@@ -1,0 +1,52 @@
+import React , {useContext , useState} from 'react';
+//Styles 
+import '../Styles/Coins.module.scss';
+
+// Context
+import { CoinContext } from '../context/CoinContextProvider';
+
+// Component (shared)
+import Coin from './shared/Coin'
+
+
+
+
+const Coins = () => {
+
+    const Coins = useContext(CoinContext);
+    console.log(Coins);
+
+    const [search , setSearch] = useState();
+
+    const changeHandler = event => {
+        setSearch(event.target.value)
+    }
+
+    const searchCoins = Coins.filter(coin => coin.name?.toLowerCase()?.includes(search?.toLowerCase()));
+    return (
+        <>
+            <div>
+                <h1>Coins</h1>
+                <input placeholder='Search' type='tetx' value={search} onChange={changeHandler}/>
+            </div>
+            <div className='coins_container'>
+                {
+                    
+                    searchCoins.map(coin => <Coin 
+                    key = {coin.id}
+                    id = {coin.id}
+                    symbol = {coin.symbol}
+                    name = {coin.name }
+                    price = {coin.current_price}
+                    market_cap = {coin.market_cap}
+                    img = {coin.image}
+                    />) 
+                    
+                }
+
+            </div>
+        </>
+    );
+};
+
+export default Coins;

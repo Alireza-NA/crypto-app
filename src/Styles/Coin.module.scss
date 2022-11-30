@@ -1,0 +1,63 @@
+@import './variables';
+@import './mixin';
+
+.item_container{
+    width: calc(100% - 2rem);
+    margin: 5px auto;
+    .items{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: calc(100% - 2rem);
+        margin: 5px auto;
+        border-radius: 5px;
+        border: 1px solid silver;
+        padding: 15px;
+        font-size: 14px;
+        img{
+            width: 30px;
+            margin-left: 8px;
+        }
+        .item {
+            width: 50px;
+            font-size: 14px;
+            margin-left: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: #333333;
+        }
+        .name_rank{
+           display: flex;
+           align-items: center;
+        }
+
+    }
+}
+@include media(M){
+    .item_container{
+        .items{
+            width: calc(100% - 2rem);
+            margin: 5px auto;
+            font-size: 10px;
+            
+            .item {
+                width: 40px;
+                font-size: 10px;
+                // margin-left: 15px;
+                text-align: left;
+                font-weight: bold;
+                color: #333333;
+          }
+        }
+        
+    }
+}
+@include media(L){
+    .item_container{
+        .items{
+            width: calc(100% - 2rem);
+            margin: 5px auto;
+            font-size: 10px;
+        }
+    }
+}
